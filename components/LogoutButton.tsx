@@ -1,7 +1,6 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export function LogoutButton() {
@@ -13,5 +12,5 @@ export function LogoutButton() {
     router.push("/login");
   };
 
-  return <Button onClick={logout}>Logout</Button>;
+  return <a onClick={logout} className="hover:text-amber-500 transition-all text-xs tracking-wider uppercase text-stone-500 cursor-pointer">Logout</a>;
 }

@@ -3,8 +3,8 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AuthButton } from "@/components/auth-button";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+import { AuthButton } from "@/components/AuthButton";
+import { AccountButton } from "@/components/AccountButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Mon Projet",
-  description: "Description de mon application",
+  title: "VinTrace",
+  description: "Application de gestion de voitures",
 };
 
 export default function RootLayout({
@@ -27,19 +27,21 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col">
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-              <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                <div className="flex gap-5 items-center font-semibold">
-                  <Link href="/">Accueil</Link>
-                  <Link href="/dashboard" className="hover:text-accent">Dashboard</Link>
+                <div className="w-[90%] sm:w-[80%] lg:w-[75%] flex justify-between items-center py-3 text-sm">
+                    <div className="flex gap-5 items-center">
+                    <Link href="/" className="text-[1.05rem] font-semibold">VinTrace</Link>
+                    <Link href="/dashboard" className="hover:text-amber-500 transition-all text-xs tracking-wider uppercase text-stone-500">
+                        Dashboard
+                    </Link>
+                    </div>
+                    <div className="flex items-center gap-4">
+                    <Suspense fallback={<div>Chargement...</div>}>
+                        <AccountButton />
+                        <AuthButton />
+                    </Suspense>
+                    </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Suspense fallback={<div>Chargement...</div>}>
-                    <AuthButton />
-                  </Suspense>
-                  <ThemeSwitcher />
-                </div>
-              </div>
-            </nav>
+                </nav>
 
             <main className="flex-1 w-full flex flex-col items-center">
               {children}

@@ -1,4 +1,4 @@
-import VehicleCard from "@/components/vehicleCard";
+import VehicleCard from "@/components/VehicleCard";
 
 export default function DashboardPage() {
     return (
