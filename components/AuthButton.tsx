@@ -19,7 +19,7 @@ export async function AuthButton() {
     <div className="flex gap-6 items-center">
         <Link href="/login" className="hover:text-amber-500 transition-all text-xs tracking-wider uppercase text-stone-500 cursor-pointer">Sign in</Link>
         <Button asChild size="sm" variant={"default"}>
-            <Link href="/signup" className="uppercase px-4 py-1 hover:bg-amber-600 transition-all text-xs font-semibold cursor-pointer">Start</Link>
+            <Link href="/signup" className="uppercase px-4 py-1 hover:bg-amber-500 transition-all text-xs font-semibold cursor-pointer">Start</Link>
         </Button>
     </div>
   );

@@ -5,4 +5,5 @@ export type Vehicle = {
     trim: string;
     image: string;
     kileage: number;
+    slug: string;
 }

@@ -22,17 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" className="dark" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col">
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-[90%] sm:w-[80%] lg:w-[75%] flex justify-between items-center py-3 text-sm">
                     <div className="flex gap-5 items-center">
-                    <Link href="/" className="text-[1.05rem] font-semibold">VinTrace</Link>
-                    <Link href="/dashboard" className="hover:text-amber-500 transition-all text-xs tracking-wider uppercase text-stone-500">
-                        Dashboard
-                    </Link>
+                        <Link href="/" className="group text-[1.05rem] font-semibold flex items-center gap-2">
+                            <div className="w-4 h-4 bg-amber-500 !rounded-[20%]"></div>
+                            <span className="hover:text-amber-500  transition-colors">VinTrace</span>
+                        </Link>
                     </div>
                     <div className="flex items-center gap-4">
                     <Suspense fallback={<div>Chargement...</div>}>
@@ -47,8 +47,8 @@ export default function RootLayout({
               {children}
             </main>
 
-            <footer className="w-full flex items-center justify-center border-t py-8 text-xs">
-              <p>© 2026 VinTrace</p>
+            <footer className="w-full flex items-center justify-center border-t border-foreground/10 py-8 text-xs">
+              <p className="text-stone-500">© 2026 VinTrace</p>
             </footer>
           </div>
         </ThemeProvider>
