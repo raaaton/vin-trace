@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Vintrace | Valorisez votre véhicule lors de sa revente",
+    title: "VinTrace | Valorisez votre véhicule lors de sa revente",
 };
 
 export default function Home() {
