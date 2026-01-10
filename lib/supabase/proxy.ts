@@ -41,7 +41,7 @@ export async function updateSession(request: NextRequest) {
     // 1. Redirection si l'utilisateur est connecté et essaie d'accéder à la racine (/)
     if (user && request.nextUrl.pathname === "/") {
         const url = request.nextUrl.clone();
-        url.pathname = "/dashboard";
+        url.pathname = "/garage";
         return NextResponse.redirect(url);
     }
 

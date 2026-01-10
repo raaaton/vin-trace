@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "VinTrace",
-  description: "Application de gestion de voitures",
+  description: "Valorisez votre véhicule avec une timeline d'entretien interactive. Archivez vos factures, documentez vos restaurations et sécurisez la revente de votre voiture de collection.",
 };
 
 export default function RootLayout({

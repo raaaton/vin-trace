@@ -3,8 +3,14 @@ import VehicleHero from "@/components/VehicleHero";
 import Link from "next/link";
 import type { Vehicle } from "@/types";
 import { createClient } from '@/lib/supabase/server';
+import { Metadata } from "next";
+import { Button } from "@/components/ui/button"
 
-export default async function DashboardPage() {
+export const metadata: Metadata = {
+    title: 'Mon Garage | VinTrace'
+};
+
+export default async function GaragePage() {
 
     const supabase = await createClient();
 
@@ -29,8 +35,6 @@ export default async function DashboardPage() {
             ascending: false,
         })
 
-        console.log(data, error);
-
     const vehicles: Vehicle[] = data?.map((vehicle) => ({
         year: vehicle.year,
         make: vehicle.brand,
@@ -47,7 +51,7 @@ export default async function DashboardPage() {
         vehicleEls = vehicles.map((vehicle) => (
             <Link
                 key={vehicle.slug}
-                href={`/dashboard/${vehicle.slug}`}
+                href={`/garage/${vehicle.slug}`}
                 className="hover:-translate-y-1 transition-all ease-out duration-300">
                 
                 <VehicleCard vehicle={vehicle} />
@@ -56,20 +60,20 @@ export default async function DashboardPage() {
     }  
 
     return (
-        <main className="mt-8 mx-auto w-[90%] sm:w-[80%] lg:w-[75%]">
+        <div className="mt-8 mx-auto w-[90%] sm:w-[80%] lg:w-[75%]">
             <header className="flex items-center justify-between mb-16 border-b border-foreground/10 pb-8">
                 <div className="flex flex-col">
                     <h1 className="text-2xl font-light tracking-tight text-stone-50 mb-2">Garage</h1>
-                    <p className="text-stone-400 text-[0.8rem] tracking-wide font-light">2 Véhicles</p>
+                    {vehicles.length > 0 && <p className="text-stone-400 text-[0.8rem] tracking-wide font-light">{vehicles.length} Véhicule{vehicles.length !== 1 ? 's' : ''}</p>}
                 </div>
-                <button className="bg-stone-50 hover:bg-stone-300 transition-all text-black px-5 py-2 text-sm">Ajouter un Véhicule</button>
+                <Button variant="outline">Ajouter un Véhicule</Button>
             </header>
             <section className={vehicles.length > 1 ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr mb-20" : "flex justify-center"}>
                 {vehicles.length > 1 ?
                     vehicleEls :
                     vehicles.length === 1 ?
                     <Link
-                        href={`/dashboard/${vehicles[0].slug}`}
+                        href={`/garage/${vehicles[0].slug}`}
                         className="">
                             
                         <VehicleHero vehicle={vehicles[0]} />
@@ -79,6 +83,6 @@ export default async function DashboardPage() {
                     <p className="text-stone-400">Aucun véhicule trouvé. Ajoutez-en un pour commencer à suivre son historique.</p>
                 }
             </section>
-        </main>
+        </div>
     );
 }

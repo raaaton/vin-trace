@@ -12,5 +12,5 @@ export function LogoutButton() {
     router.push("/login");
   };
 
-  return <a onClick={logout} className="hover:text-primary transition-all text-xs tracking-wider uppercase text-stone-400 cursor-pointer">Logout</a>;
+  return <button onClick={logout} className="hover:text-primary transition-all text-xs tracking-wider uppercase text-stone-400 cursor-pointer">Déconnexion</button>;
 }
