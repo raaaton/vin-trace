@@ -12,10 +12,10 @@ export const hasEnvVars =
 
 export const maskVIN = (vin: string): string => {
     if (!vin || vin.length < 8) return vin;
-    
+
     const visibleCount = 6;
     const maskedSection = "*".repeat(vin.length - visibleCount);
     const visibleSection = vin.slice(-visibleCount);
-    
+
     return maskedSection + visibleSection;
 };

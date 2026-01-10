@@ -6,4 +6,4 @@ export type Vehicle = {
     image: string;
     kileage: number;
     slug: string;
-}
+};
