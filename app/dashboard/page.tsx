@@ -60,7 +60,7 @@ export default async function DashboardPage() {
             <header className="flex items-center justify-between mb-16 border-b border-foreground/10 pb-8">
                 <div className="flex flex-col">
                     <h1 className="text-2xl font-light tracking-tight text-stone-50 mb-2">Garage</h1>
-                    <p className="text-stone-500 text-[0.8rem] tracking-wide font-light">2 Véhicles</p>
+                    <p className="text-stone-400 text-[0.8rem] tracking-wide font-light">2 Véhicles</p>
                 </div>
                 <button className="bg-stone-50 hover:bg-stone-300 transition-all text-black px-5 py-2 text-sm">Ajouter un Véhicule</button>
             </header>
@@ -76,7 +76,7 @@ export default async function DashboardPage() {
                     </Link>
                     :
 
-                    <p className="text-stone-500">Aucun véhicule trouvé. Ajoutez-en un pour commencer à suivre son historique.</p>
+                    <p className="text-stone-400">Aucun véhicule trouvé. Ajoutez-en un pour commencer à suivre son historique.</p>
                 }
             </section>
         </main>

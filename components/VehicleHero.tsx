@@ -8,10 +8,10 @@ type VehicleHeroProps = {
 
 export default function VehicleHero({ vehicle }: VehicleHeroProps) {
     return (
-        <div className="bg-stone-900/25 relative p-0 border border-stone-700/75 hover:border-stone-500/75 transition-colors ease-out group flex flex-col md:flex-row items-stretch max-w-6xl mx-auto overflow-hidden">
+        <div className="bg-background relative p-0 border border-stone-700/75 hover:border-stone-500/75 transition-colors ease-out group flex flex-col md:flex-row items-stretch max-w-6xl mx-auto overflow-hidden">
             
             {/* Badge année repositionné pour le format Hero */}
-            <span className="text-stone-200 font-light text-[12px] bg-stone-900/95 absolute top-6 left-6 px-3 py-1 border border-stone-700 z-50">
+            <span className="text-stone-200 font-light text-[12px] bg-stone-800/90 absolute top-6 left-6 px-3 py-1 border border-stone-700 z-50">
                 {vehicle.year}
             </span>
 
@@ -31,24 +31,24 @@ export default function VehicleHero({ vehicle }: VehicleHeroProps) {
                     <h2 className="text-2xl md:text-3xl text-stone-50 font-medium">
                         {vehicle.make} 
                         <br />
-                        <span className="font-light text-stone-500">
+                        <span className="font-light text-stone-400">
                             {vehicle.model}
                         </span>
                     </h2>
-                    <ArrowUpRight className="text-stone-500 group-hover:text-stone-50 transition-colors duration-250 w-6 h-6" />
+                    <ArrowUpRight className="text-stone-400 group-hover:text-stone-50 transition-colors duration-250 w-6 h-6" />
                 </div>
 
-                <p className="text-sm font-light tracking-widest uppercase text-stone-500 mb-8">
+                <p className="text-sm font-light tracking-widest uppercase text-stone-400 mb-8">
                     {vehicle.trim}
                 </p>
 
                 <div className="mt-auto pt-8 border-t border-stone-700/75">
-                    <p className="text-xs font-light tracking-wider uppercase text-stone-500 mb-1">
+                    <p className="text-xs font-light tracking-wider uppercase text-stone-400 mb-1">
                         Kilométrage
                     </p>
                     <p className="text-2xl font-light text-stone-50 font-mono">
                         {vehicle.kileage.toLocaleString('en-US')} 
-                        <span className="text-sm ml-2 text-stone-500">KM</span>
+                        <span className="text-sm ml-2 text-stone-400">km</span>
                     </p>
                 </div>
             </div>

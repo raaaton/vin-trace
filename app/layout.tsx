@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col">
+
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-[90%] sm:w-[80%] lg:w-[75%] flex justify-between items-center py-3 text-sm">
                     <div className="flex gap-5 items-center">
@@ -42,7 +43,7 @@ export default function RootLayout({
                     </Suspense>
                     </div>
                 </div>
-                </nav>
+            </nav>
 
             <main className="flex-1 w-full flex flex-col items-center">
               {children}
