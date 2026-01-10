@@ -38,7 +38,7 @@ export default function VehicleHero({ vehicle }: VehicleHeroProps) {
                     <ArrowUpRight className="text-stone-400 group-hover:text-stone-50 transition-colors duration-250 w-6 h-6" />
                 </div>
 
-                <p className="text-sm font-light tracking-widest uppercase text-stone-400 mb-8">
+                <p className="text-sm font-light font-mono tracking-widest uppercase text-stone-400 mb-8">
                     {maskVIN(vehicle.trim)}
                 </p>
 
