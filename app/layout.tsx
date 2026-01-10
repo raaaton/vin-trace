@@ -31,8 +31,8 @@ export default function RootLayout({
                 <div className="w-[90%] sm:w-[80%] lg:w-[75%] flex justify-between items-center py-3 text-sm">
                     <div className="flex gap-5 items-center">
                         <Link href="/" className="group text-[1.05rem] font-semibold flex items-center gap-2">
-                            <div className="w-4 h-4 bg-amber-500 !rounded-[20%]"></div>
-                            <span className="hover:text-amber-500  transition-colors">VinTrace</span>
+                            <div className="w-4 h-4 bg-primary !rounded-[20%]"></div>
+                            <span className="hover:text-primary  transition-colors">VinTrace</span>
                         </Link>
                     </div>
                     <div className="flex items-center gap-4">
