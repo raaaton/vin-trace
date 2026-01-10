@@ -9,7 +9,7 @@ export function LogoutButton() {
   const logout = async () => {
     const supabase = createClient();
     await supabase.auth.signOut();
-    router.push("/login");
+    router.push("/");
   };
 
   return <button onClick={logout} className="hover:text-primary transition-all text-xs tracking-wider uppercase text-stone-400 cursor-pointer">Déconnexion</button>;
